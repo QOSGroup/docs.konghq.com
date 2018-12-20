@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Instruction on the interfaces in mobile app</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/styles.82f9b2d4.css" as="style"><link rel="preload" href="/assets/js/app.82f9b2d4.js" as="script"><link rel="preload" href="/assets/js/3.71c971e7.js" as="script"><link rel="prefetch" href="/assets/css/1.styles.5a8ea794.css"><link rel="prefetch" href="/assets/js/1.5a8ea794.js"><link rel="prefetch" href="/assets/css/2.styles.db20e2a7.css"><link rel="prefetch" href="/assets/js/2.db20e2a7.js"><link rel="prefetch" href="/assets/js/4.b6a2e090.js">
+    <link rel="stylesheet" href="/assets/css/styles.82f9b2d4.css"><link rel="stylesheet" href="/assets/css/1.styles.5a8ea794.css"><link rel="stylesheet" href="/assets/css/2.styles.db20e2a7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="page"> <div class="content"><h1 id="instruction-on-the-interfaces-in-mobile-app"><a href="#instruction-on-the-interfaces-in-mobile-app" aria-hidden="true" class="header-anchor">#</a> Instruction on the interfaces in mobile app</h1> <p>How to invoke the functions/interfaces for mobile app</p> <h2 id="current-version-via-commit-hash"><a href="#current-version-via-commit-hash" aria-hidden="true" class="header-anchor">#</a> Current version via commit hash:</h2> <div class="language- extra-class"><pre class="language-text"><code>aa3a2b5
+</code></pre></div><h2 id="interfaces-exposed"><a href="#interfaces-exposed" aria-hidden="true" class="header-anchor">#</a> Interfaces exposed</h2> <p>There are 13 interfaces exposed under the current version, let’s start with the interfaces one by one.</p> <h3 id="_1-accountcreate"><a href="#_1-accountcreate" aria-hidden="true" class="header-anchor">#</a> 1. AccountCreate</h3> <p>Used for account creation with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func AccountCreate(password string) string
+</code></pre></div><p>Input <code>password</code> string format for account generation with example output as below:</p> <div class="language- extra-class"><pre class="language-text"><code>{
+          &quot;jsonrpc&quot;: &quot;2.0&quot;,
+          &quot;id&quot;: &quot;&quot;,
+          &quot;result&quot;: {
+            &quot;pubKey&quot;: &quot;YRoVbOkSxltrudPcvZhZF4tbF/293Tozp8s+Pm9EHXk=&quot;,
+            &quot;privKey&quot;: &quot;HDzw0o0BlBMP6+tJXp7U65vpH5/UKaWtHaqLKBlLDD5hGhVs6RLGW2u509y9mFkXi1sX/b3dOjOnyz4+b0QdeQ==&quot;,
+            &quot;addr&quot;: &quot;address16rd2qgs6whuhycgm90yvx8uz6dwh83vh2jk2gn&quot;,
+            &quot;mnemonic&quot;: &quot;siren venue foil chaos hen margin hockey cost decide critic process off allow layer position morning used plunge onion volume job tape into before&quot;,
+            &quot;type&quot;: &quot;local&quot;
+          }
+ }
+</code></pre></div><p>Note: Write down the mnemonic, it is critical for the account recovery procedure.</p> <h3 id="_2-accountrecover"><a href="#_2-accountrecover" aria-hidden="true" class="header-anchor">#</a> 2. AccountRecover</h3> <p>Used for account recovery with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func AccountRecover(mncode, password string) string
+</code></pre></div><p>Input the &quot;mnemonic&quot; as <code>mncode</code> and the <code>password</code> upon account creation, it could be recovered with example output as below:</p> <div class="language- extra-class"><pre class="language-text"><code>{
+          &quot;jsonrpc&quot;: &quot;2.0&quot;,
+          &quot;id&quot;: &quot;&quot;,
+          &quot;result&quot;: {
+            &quot;pubKey&quot;: &quot;YRoVbOkSxltrudPcvZhZF4tbF/293Tozp8s+Pm9EHXk=&quot;,
+            &quot;privKey&quot;: &quot;HDzw0o0BlBMP6+tJXp7U65vpH5/UKaWtHaqLKBlLDD5hGhVs6RLGW2u509y9mFkXi1sX/b3dOjOnyz4+b0QdeQ==&quot;,
+            &quot;addr&quot;: &quot;address16rd2qgs6whuhycgm90yvx8uz6dwh83vh2jk2gn&quot;,
+            &quot;mnemonic&quot;: &quot;siren venue foil chaos hen margin hockey cost decide critic process off allow layer position morning used plunge onion volume job tape into before&quot;,
+            &quot;type&quot;: &quot;local&quot;
+          }
+ }
+</code></pre></div><p>Obviously, it is the same format as that while account creation!</p> <h3 id="_3-pubaddrretrieval"><a href="#_3-pubaddrretrieval" aria-hidden="true" class="header-anchor">#</a> 3. PubAddrRetrieval</h3> <p>Used for public key and address retrieval from private key input with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func PubAddrRetrieval(priv string) string
+</code></pre></div><p>Input the &quot;privKey&quot; of the account as <code>priv</code> to fetch the public key and address information, the output could be as below:</p> <div class="language- extra-class"><pre class="language-text"><code>{
+          &quot;jsonrpc&quot;: &quot;2.0&quot;,
+          &quot;id&quot;: &quot;&quot;,
+          &quot;result&quot;: {
+            &quot;pubKey&quot;: &quot;YRoVbOkSxltrudPcvZhZF4tbF/293Tozp8s+Pm9EHXk=&quot;,
+            &quot;addr&quot;: &quot;address16rd2qgs6whuhycgm90yvx8uz6dwh83vh2jk2gn&quot;
+          }
+ }
+</code></pre></div><h3 id="_4-aesencrypt"><a href="#_4-aesencrypt" aria-hidden="true" class="header-anchor">#</a> 4. AesEncrypt</h3> <p>Used for the private key AES encryption alongside with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func AesEncrypt(key, plainText string) string 
+</code></pre></div><p>Input the &quot;key&quot; as the string output of internal HMAC, the byte size should be 16, and the &quot;plainText&quot; is the &quot;privKey&quot; of the account. The output could be as below:</p> <div class="language- extra-class"><pre class="language-text"><code>90wz2NtXedwF5kMnjF88kty4yjxacijK9GdhpZhOvYwaeB-UV1QA6E0uuAv2rDUSlW3v81OS-u4I5sj2nBwF-vIxsyDc3UxwyIezFJPTHYo1J2yaSFX77WzxaxhOCXAQWTowgSO-aPs=
+</code></pre></div><p>It would be stored in the app equipment and retrieved for the &quot;plain&quot; private key after decryption.</p> <p>Note: It is worth mentioning however that there is a &quot;salt&quot; of sorts for AES as well in the form of the IV (initialization vector). This is simply random data (which should be different every time), that can be stored alongside the ciphertext, and ensures that even when encrypting the same data multiple times, the output is different.</p> <h3 id="_5-aesdecrypt"><a href="#_5-aesdecrypt" aria-hidden="true" class="header-anchor">#</a> 5. AesDecrypt</h3> <p>Used for the private key retrieval on AES decryption with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func AesDecrypt(key, cipherText string) string 
+</code></pre></div><p>Input the same &quot;key&quot; as encryption, and the &quot;cipherText&quot; output of the private key after encryption. The &quot;plain&quot; private key could be shown as below:</p> <div class="language- extra-class"><pre class="language-text"><code>HDzw0o0BlBMP6+tJXp7U65vpH5/UKaWtHaqLKBlLDD5hGhVs6RLGW2u509y9mFkXi1sX/b3dOjOnyz4+b0QdeQ==
+</code></pre></div><h3 id="_6-setblockchainentrance"><a href="#_6-setblockchainentrance" aria-hidden="true" class="header-anchor">#</a> 6. SetBlockchainEntrance</h3> <p>Used for set the Restful entrance for the block chain with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func SetBlockchainEntrance(sh, mh string)
+</code></pre></div><p>Input &quot;sh&quot; means the restful host of block chain(e.g. qstars), the format could be &quot;<IP>:1317&quot;; the &quot;mh&quot; is reserved for Qmoon explorer, right now could be input as &quot;forQmoonAddr&quot; or any string.</IP></p> <p>Note: This function should be invoked every time Restful operations are taking.</p> <h3 id="_7-qscqueryaccount"><a href="#_7-qscqueryaccount" aria-hidden="true" class="header-anchor">#</a> 7. QSCQueryAccount</h3> <p>Used for querying the QSC account information with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func QSCQueryAccount(addr string) string
+</code></pre></div><p>Input &quot;addr&quot; of the account you want to query.</p> <p>Note: Remember this is only used for query the account activated in QSC other than QOS, error would be returned if input the wrong address.</p> <h3 id="_8-qosqueryaccount"><a href="#_8-qosqueryaccount" aria-hidden="true" class="header-anchor">#</a> 8. QOSQueryAccount</h3> <p>Used for querying the QOS account information with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func QOSQueryAccount(addr string) string
+</code></pre></div><p>Input &quot;addr&quot; of the account you want to query.</p> <p>Note: Remember this is only used for query the account activated in QOS other than QSC, error would be returned if input the wrong address.</p> <h3 id="_9-qsckvstoreset"><a href="#_9-qsckvstoreset" aria-hidden="true" class="header-anchor">#</a> 9.  QSCKVStoreSet</h3> <p>Used for setting the keystore information in QSC with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func QSCKVStoreSet(k, v, privkey, chain string) string
+</code></pre></div><p>Input &quot;k&quot;, &quot;v&quot; is the key-value as name, &quot;chain&quot; is the chain-id of the QSC, which is also corresponding to the Restful host with <code>SetBlockchainEntrance</code>; for security reason, &quot;privkey&quot; would be deprecated, now you can input any string.</p> <p>Note: It should not input as plain &quot;privkey&quot; by security reason!</p> <h3 id="_10-qsckvstoreget"><a href="#_10-qsckvstoreget" aria-hidden="true" class="header-anchor">#</a> 10.  QSCKVStoreGet</h3> <p>Used for setting the keystore information in QSC with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func QSCKVStoreGet(k string) string
+</code></pre></div><p>Input &quot;k&quot; is the key set in the previous <code>QSCKVStoreSet</code></p> <h3 id="_11-qsctransfersend"><a href="#_11-qsctransfersend" aria-hidden="true" class="header-anchor">#</a> 11.  QSCtransferSend</h3> <p>Used for transaction via the QSC then direct to QOS with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func QSCtransferSend(addrto, coinstr, privkey, chainid string) string
+</code></pre></div><p>Input &quot;addrto&quot; is the address of the receiver; &quot;coinstr&quot; is the transaction amount, e.g. &quot;1QOS&quot;; &quot;privkey&quot; is the &quot;plain&quot; private key of the sender; &quot;chainid&quot; is the chain-id of the QSC which is also corresponding to the Restful host with <code>SetBlockchainEntrance</code></p> <h3 id="_12-qoscommitresultcheck"><a href="#_12-qoscommitresultcheck" aria-hidden="true" class="header-anchor">#</a> 12.  QOSCommitResultCheck</h3> <p>Used for QSC transaction check with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func QOSCommitResultCheck(txhash, height string) string
+</code></pre></div><p>Input &quot;txhash&quot; ,&quot;height&quot; are the transaction hash and block height respectively after the transaction result feedback.
+Note: This function is partially implemented while QOS unsupported.</p> <h3 id="_13-jqinvestad"><a href="#_13-jqinvestad" aria-hidden="true" class="header-anchor">#</a> 13.  JQInvestAd</h3> <p>Used for generation the transaction message with usage:</p> <div class="language- extra-class"><pre class="language-text"><code>func JQInvestAd(QOSchainId, QSCchainId, articleHash, coins, privatekey string) string 
+</code></pre></div><p>Input &quot;QOSchainId&quot;, &quot;QSCchainId&quot; are the chain-id for the QOS and QSC respectively; &quot;articleHash&quot; is the hash of the article which has already created in QSC; &quot;coins&quot; is the investing amount; &quot;privatekey&quot; is the &quot;plain&quot; private key of the Dapp owner.
+The output would be a transaction message on json, to be sent to Java background to push to block chain. An output example could be as below:</p> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;type&quot;: &quot;qbase/txs/stdtx&quot;,
+    &quot;value&quot;: {
+      &quot;itx&quot;: {
+        &quot;type&quot;: &quot;qstars/InvestTx&quot;,
+        &quot;value&quot;: {
+          &quot;Std&quot;: {
+            &quot;itx&quot;: {
+              &quot;type&quot;: &quot;qos/txs/TxTransfer&quot;,
+              &quot;value&quot;: {
+                &quot;senders&quot;: [
+                  {
+                    &quot;addr&quot;: &quot;address13mjc3n3xxj73dhkju9a0dfr4lrfvv3whxqg0dy&quot;,
+                    &quot;qos&quot;: &quot;0&quot;,
+                    &quot;qscs&quot;: [
+                      {
+                        &quot;coin_name&quot;: &quot;AOE&quot;,
+                        &quot;amount&quot;: &quot;5&quot;
+                      }
+                    ]
+                  }
+                ],
+                &quot;receivers&quot;: [
+                  {
+                    &quot;addr&quot;: &quot;address18yunjwfe8yunjwfe8yunjwfe8yunjwfex078fv&quot;,
+                    &quot;qos&quot;: &quot;0&quot;,
+                    &quot;qscs&quot;: [
+                      {
+                        &quot;coin_name&quot;: &quot;AOE&quot;,
+                        &quot;amount&quot;: &quot;5&quot;
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            &quot;sigature&quot;: [
+              {
+                &quot;pubkey&quot;: {
+                  &quot;type&quot;: &quot;tendermint/PubKeyEd25519&quot;,
+                  &quot;value&quot;: &quot;fDLjEW4zeLVCvKKx4iYB00fnp5Mcl3APIIla7KyETOE=&quot;
+                },
+                &quot;signature&quot;: &quot;8BSwrU4aRzeKuaedOmfX0y7vliKtBxSquvMm6EFJU3d+cv8fK+/Vyen7ZqDTUizlTuOr7VP7Ydtw2MiSGSt7Ag==&quot;,
+                &quot;nonce&quot;: &quot;18&quot;
+              }
+            ],
+            &quot;chainid&quot;: &quot;qos-test&quot;,
+            &quot;maxgas&quot;: &quot;0&quot;
+          },
+          &quot;articleHash&quot;: &quot;MTU0NTEyODMyMTE0Mg==&quot;
+        }
+      },
+      &quot;sigature&quot;: [
+        {
+          &quot;pubkey&quot;: {
+            &quot;type&quot;: &quot;tendermint/PubKeyEd25519&quot;,
+            &quot;value&quot;: &quot;fDLjEW4zeLVCvKKx4iYB00fnp5Mcl3APIIla7KyETOE=&quot;
+          },
+          &quot;signature&quot;: &quot;7/5IhnUZEzEX+nBCqBDBSJzltkCDjgZVYkP8NUc7RZ7m7Gkpb2p5tInzBaqIop8YCiyt9qPOXFW2Xje3/+B/Dg==&quot;,
+          &quot;nonce&quot;: &quot;28&quot;
+        }
+      ],
+      &quot;chainid&quot;: &quot;qstars-test&quot;,
+      &quot;maxgas&quot;: &quot;0&quot;
+    }
+  }
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/3.71c971e7.js" defer></script><script src="/assets/js/app.82f9b2d4.js" defer></script>
+  </body>
+</html>
