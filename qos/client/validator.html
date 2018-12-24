@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Validator命令行工具 | QOS</title>
+    <meta name="description" content="Documentation for the QOS.">
+    
+    
+    <link rel="preload" href="/qos/assets/css/0.styles.b2e484fa.css" as="style"><link rel="preload" href="/qos/assets/js/app.a7582c95.js" as="script"><link rel="preload" href="/qos/assets/js/10.5be524e7.js" as="script"><link rel="prefetch" href="/qos/assets/js/11.ada86045.js"><link rel="prefetch" href="/qos/assets/js/12.fa797095.js"><link rel="prefetch" href="/qos/assets/js/13.a2074b94.js"><link rel="prefetch" href="/qos/assets/js/14.13c9a272.js"><link rel="prefetch" href="/qos/assets/js/15.fb84154f.js"><link rel="prefetch" href="/qos/assets/js/16.b0de5c29.js"><link rel="prefetch" href="/qos/assets/js/17.94d3202e.js"><link rel="prefetch" href="/qos/assets/js/18.dc0d9c53.js"><link rel="prefetch" href="/qos/assets/js/19.778e9a09.js"><link rel="prefetch" href="/qos/assets/js/2.8d7f72d8.js"><link rel="prefetch" href="/qos/assets/js/20.f43e2b39.js"><link rel="prefetch" href="/qos/assets/js/21.91a63051.js"><link rel="prefetch" href="/qos/assets/js/22.9659ea99.js"><link rel="prefetch" href="/qos/assets/js/23.81991174.js"><link rel="prefetch" href="/qos/assets/js/24.f2e92bb5.js"><link rel="prefetch" href="/qos/assets/js/25.1042ae4a.js"><link rel="prefetch" href="/qos/assets/js/26.d78caedf.js"><link rel="prefetch" href="/qos/assets/js/27.84fe5be9.js"><link rel="prefetch" href="/qos/assets/js/28.dc73a730.js"><link rel="prefetch" href="/qos/assets/js/29.f57c0b95.js"><link rel="prefetch" href="/qos/assets/js/3.d146b90d.js"><link rel="prefetch" href="/qos/assets/js/4.96a0a3d0.js"><link rel="prefetch" href="/qos/assets/js/5.171adba0.js"><link rel="prefetch" href="/qos/assets/js/6.45ef92a8.js"><link rel="prefetch" href="/qos/assets/js/7.84498260.js"><link rel="prefetch" href="/qos/assets/js/8.02c1d139.js"><link rel="prefetch" href="/qos/assets/js/9.535e79ca.js">
+    <link rel="stylesheet" href="/qos/assets/css/0.styles.b2e484fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/qos/" class="home-link router-link-active"><!----> <span class="site-name">QOS</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://www.github.com/QOSGroup/qos" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Back to QOS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://www.github.com/QOSGroup/qos" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Back to QOS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Introduction</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/qos/introduction/qos.html" class="sidebar-link">QOS</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Getting Started</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/qos/install/installation.html" class="sidebar-link">Install</a></li><li><a href="/qos/install/networks.html" class="sidebar-link">Networks</a></li><li><a href="/qos/install/testnet.html" class="sidebar-link">Testnet</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Client</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/qos/client/qoscli.html" class="sidebar-link">qoscli</a></li><li><a href="/qos/client/account.html" class="sidebar-link">account</a></li><li><a href="/qos/client/transfer.html" class="sidebar-link">transfer</a></li><li><a href="/qos/client/approve.html" class="sidebar-link">approve</a></li><li><a href="/qos/client/qsc.html" class="sidebar-link">qsc</a></li><li><a href="/qos/client/qcp.html" class="sidebar-link">qcp</a></li><li><a href="/qos/client/validator.html" class="active sidebar-link">validator</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/qos/client/validator.html#create" class="sidebar-link">create</a></li><li class="sidebar-sub-header"><a href="/qos/client/validator.html#revoke" class="sidebar-link">revoke</a></li><li class="sidebar-sub-header"><a href="/qos/client/validator.html#active" class="sidebar-link">active</a></li><li class="sidebar-sub-header"><a href="/qos/client/validator.html#query" class="sidebar-link">query</a></li></ul></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Spec</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/qos/spec/account.html" class="sidebar-link">Account</a></li><li><a href="/qos/spec/genesis.html" class="sidebar-link">Genesis</a></li><li><a href="/qos/spec/ca.html" class="sidebar-link">CA</a></li><li><a href="/qos/spec/txs/transfer.html" class="sidebar-link">Transfer</a></li><li><a href="/qos/spec/txs/approve.html" class="sidebar-link">Approve</a></li><li><a href="/qos/spec/txs/qsc.html" class="sidebar-link">QSC</a></li><li><a href="/qos/spec/txs/qcp.html" class="sidebar-link">QCP</a></li><li><a href="/qos/client/validators/all_about_validators.html" class="sidebar-link">Stake</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="validator命令行工具"><a href="#validator命令行工具" aria-hidden="true" class="header-anchor">#</a> Validator命令行工具</h1> <p>参照<a href="/qos/client/validators/all_about_validators.html">QOS验证人节点详解</a>了解validator相关实现机制。</p> <p>含以下命令:</p> <ul><li><code>qoscli tx create-validator</code>: 成为validator</li> <li><code>qoscli tx revoke-validator</code>: 撤消validator</li> <li><code>qoscli tx active-validator</code>: 激活validator</li> <li><code>qoscli query validator</code>: 查找validator</li> <li><code>qoscli query validators</code>: validator列表</li></ul> <h2 id="create"><a href="#create" aria-hidden="true" class="header-anchor">#</a> create</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ qoscli tx create-validator --help
+
+pubkey is a tendermint validator pubkey. the public key of the validator used <span class="token keyword">in</span>
+Tendermint consensus.
+
+owner is a keystore name or account address.
+
+ex: pubkey: <span class="token punctuation">{</span><span class="token string">&quot;type&quot;</span><span class="token keyword">:</span><span class="token string">&quot;tendermint/PubKeyEd25519&quot;</span>,<span class="token string">&quot;value&quot;</span><span class="token keyword">:</span><span class="token string">&quot;VOn2rPx+t7Njdgi+eLb+jBuF175T1b7LAcHElsmIuXA=&quot;</span><span class="token punctuation">}</span>
+
+example:
+
+         qoscli create-validator --name validatorName --owner ownerName --pubkey <span class="token string">&quot;VOn2rPx+t7Njdgi+eLb+jBuF175T1b7LAcHElsmIuXA=&quot;</span> --tokens 100
+
+Usage:
+  qoscli tx create-validator <span class="token punctuation">[</span>flags<span class="token punctuation">]</span>
+
+Flags:
+      --async                 broadcast transactions asynchronously
+      --chain-id string       Chain ID of tendermint node
+      --description string    description
+  -h, --help                  <span class="token function">help</span> <span class="token keyword">for</span> create-validator
+      --indent                add indent to json response
+      --max-gas int           gas limit to <span class="token keyword">set</span> per tx
+      --name string           name <span class="token keyword">for</span> validator
+      --node string           <span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> to tendermint rpc interface <span class="token keyword">for</span> this chain <span class="token punctuation">(</span>default <span class="token string">&quot;tcp://localhost:26657&quot;</span><span class="token punctuation">)</span>
+      --nonce int             account nonce to sign the tx
+      --nonce-node string     tcp://<span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> to tendermint rpc interface <span class="token keyword">for</span> some chain to query account nonce
+      --owner string          keystore name or account address
+      --pubkey string         tendermint consensus validator public key
+      --qcp                   <span class="token function">enable</span> qcp mode. send qcp tx
+      --qcp-blockheight int   qcp mode flag. original tx blockheight, blockheight must greater than 0
+      --qcp-extends string    qcp mode flag. qcp tx extends info
+      --qcp-from string       qcp mode flag. qcp tx <span class="token function">source</span> chainID
+      --qcp-seq int           qcp mode flag.  qcp <span class="token keyword">in</span> sequence
+      --qcp-signer string     qcp mode flag. qcp tx signer key name
+      --qcp-txindex int       qcp mode flag. original tx index
+      --tokens int            bond tokens amount
+      --trust-node            Trust connected full node <span class="token punctuation">(</span>don't verify proofs <span class="token keyword">for</span> responses<span class="token punctuation">)</span>
+
+Global Flags:
+  -e, --encoding string   Binary encoding <span class="token punctuation">(</span>hex<span class="token operator">|</span>b64<span class="token operator">|</span>btc<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;hex&quot;</span><span class="token punctuation">)</span>
+      --home string       directory <span class="token keyword">for</span> config and data <span class="token punctuation">(</span>default <span class="token string">&quot;C:\\Users\\imuge/.qoscli&quot;</span><span class="token punctuation">)</span>
+  -o, --output string     Output <span class="token function">format</span> <span class="token punctuation">(</span>text<span class="token operator">|</span>json<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;text&quot;</span><span class="token punctuation">)</span>
+      --trace             print out full stack trace on errors
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><p>主要参数：</p> <ul><li>owner         操作者keystore name或 QOS account地址</li> <li>name          validator名称</li> <li>pubkey        priv_validator.json 中 <code>pub_key</code>内<code>value</code>部分</li> <li>tokens        绑定tokens，不能大于owner持有QOS数量</li> <li>description   备注</li></ul> <blockquote><p>可以通过<code>qoscli keys import</code>导入<em>owner</em>账户，并保证owner持有QOS</p></blockquote> <h2 id="revoke"><a href="#revoke" aria-hidden="true" class="header-anchor">#</a> revoke</h2> <p>撤销validator，撤销之后validator处于pending状态</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ qoscli tx revoke-validator --help
+Revoke validator
+
+Usage:
+  qoscli tx revoke-validator <span class="token punctuation">[</span>flags<span class="token punctuation">]</span>
+
+Flags:
+      --async                 broadcast transactions asynchronously
+      --chain-id string       Chain ID of tendermint node
+  -h, --help                  <span class="token function">help</span> <span class="token keyword">for</span> revoke-validator
+      --indent                add indent to json response
+      --max-gas int           gas limit to <span class="token keyword">set</span> per tx
+      --node string           <span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> to tendermint rpc interface <span class="token keyword">for</span> this chain <span class="token punctuation">(</span>default <span class="token string">&quot;tcp://localhost:26657&quot;</span><span class="token punctuation">)</span>
+      --nonce int             account nonce to sign the tx
+      --nonce-node string     tcp://<span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> to tendermint rpc interface <span class="token keyword">for</span> some chain to query account nonce
+      --owner string          owner keystore name or address
+      --qcp                   <span class="token function">enable</span> qcp mode. send qcp tx
+      --qcp-blockheight int   qcp mode flag. original tx blockheight, blockheight must greater than 0
+      --qcp-extends string    qcp mode flag. qcp tx extends info
+      --qcp-from string       qcp mode flag. qcp tx <span class="token function">source</span> chainID
+      --qcp-seq int           qcp mode flag.  qcp <span class="token keyword">in</span> sequence
+      --qcp-signer string     qcp mode flag. qcp tx signer key name
+      --qcp-txindex int       qcp mode flag. original tx index
+      --trust-node            Trust connected full node <span class="token punctuation">(</span>don't verify proofs <span class="token keyword">for</span> responses<span class="token punctuation">)</span>
+
+Global Flags:
+  -e, --encoding string   Binary encoding <span class="token punctuation">(</span>hex<span class="token operator">|</span>b64<span class="token operator">|</span>btc<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;hex&quot;</span><span class="token punctuation">)</span>
+      --home string       directory <span class="token keyword">for</span> config and data <span class="token punctuation">(</span>default <span class="token string">&quot;C:\\Users\\imuge/.qoscli&quot;</span><span class="token punctuation">)</span>
+  -o, --output string     Output <span class="token function">format</span> <span class="token punctuation">(</span>text<span class="token operator">|</span>json<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;text&quot;</span><span class="token punctuation">)</span>
+      --trace             print out full stack trace on errors
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>主要参数：</p> <ul><li>owner         操作者keystore name或 QOS account地址</li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ qoscli tx revoke-validator --owner <span class="token operator">&lt;</span>keystore_name_of_owner or address_of_owner_account<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="active"><a href="#active" aria-hidden="true" class="header-anchor">#</a> active</h2> <p>重新激活validator，可重新参与打块和投票</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ qoscli tx active-validator --help
+Active validator
+
+Usage:
+  qoscli tx active-validator <span class="token punctuation">[</span>flags<span class="token punctuation">]</span>
+
+Flags:
+      --async                 broadcast transactions asynchronously
+      --chain-id string       Chain ID of tendermint node
+  -h, --help                  <span class="token function">help</span> <span class="token keyword">for</span> active-validator
+      --indent                add indent to json response
+      --max-gas int           gas limit to <span class="token keyword">set</span> per tx
+      --node string           <span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> to tendermint rpc interface <span class="token keyword">for</span> this chain <span class="token punctuation">(</span>default <span class="token string">&quot;tcp://localhost:26657&quot;</span><span class="token punctuation">)</span>
+      --nonce int             account nonce to sign the tx
+      --nonce-node string     tcp://<span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> to tendermint rpc interface <span class="token keyword">for</span> some chain to query account nonce
+      --owner string          owner keystore or address
+      --qcp                   <span class="token function">enable</span> qcp mode. send qcp tx
+      --qcp-blockheight int   qcp mode flag. original tx blockheight, blockheight must greater than 0
+      --qcp-extends string    qcp mode flag. qcp tx extends info
+      --qcp-from string       qcp mode flag. qcp tx <span class="token function">source</span> chainID
+      --qcp-seq int           qcp mode flag.  qcp <span class="token keyword">in</span> sequence
+      --qcp-signer string     qcp mode flag. qcp tx signer key name
+      --qcp-txindex int       qcp mode flag. original tx index
+      --trust-node            Trust connected full node <span class="token punctuation">(</span>don't verify proofs <span class="token keyword">for</span> responses<span class="token punctuation">)</span>
+
+Global Flags:
+  -e, --encoding string   Binary encoding <span class="token punctuation">(</span>hex<span class="token operator">|</span>b64<span class="token operator">|</span>btc<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;hex&quot;</span><span class="token punctuation">)</span>
+      --home string       directory <span class="token keyword">for</span> config and data <span class="token punctuation">(</span>default <span class="token string">&quot;C:\\Users\\imuge/.qoscli&quot;</span><span class="token punctuation">)</span>
+  -o, --output string     Output <span class="token function">format</span> <span class="token punctuation">(</span>text<span class="token operator">|</span>json<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;text&quot;</span><span class="token punctuation">)</span>
+      --trace             print out full stack trace on errors
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>主要参数：</p> <ul><li>owner         操作者keystore name或 QOS account地址</li></ul> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ qoscli tx active-validator --owner <span class="token operator">&lt;</span>keystore_name_of_owner or address_of_owner_account<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="query"><a href="#query" aria-hidden="true" class="header-anchor">#</a> query</h2> <p>查询validator信息</p> <h3 id="validator"><a href="#validator" aria-hidden="true" class="header-anchor">#</a> validator</h3> <p>根据owner查找</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ qoscli query validator --help
+Query validator<span class="token string">'s info
+
+Usage:
+  qoscli query validator [flags]
+
+Flags:
+      --chain-id string   Chain ID of tendermint node
+      --height int        block height to query, omit to get most recent provable block
+  -h, --help              help for validator
+      --indent            add indent to json response
+      --node string       &lt;host&gt;:&lt;port&gt; to tendermint rpc interface for this chain (default &quot;tcp://localhost:26657&quot;)
+      --owner string      validator'</span>s owner address
+      --trust-node        Trust connected full node <span class="token punctuation">(</span>don't verify proofs <span class="token keyword">for</span> responses<span class="token punctuation">)</span>
+
+Global Flags:
+  -e, --encoding string   Binary encoding <span class="token punctuation">(</span>hex<span class="token operator">|</span>b64<span class="token operator">|</span>btc<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;hex&quot;</span><span class="token punctuation">)</span>
+      --home string       directory <span class="token keyword">for</span> config and data <span class="token punctuation">(</span>default <span class="token string">&quot;C:\\Users\\imuge/.qoscli&quot;</span><span class="token punctuation">)</span>
+  -o, --output string     Output <span class="token function">format</span> <span class="token punctuation">(</span>text<span class="token operator">|</span>json<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;text&quot;</span><span class="token punctuation">)</span>
+      --trace             print out full stack trace on errors
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>主要参数：</p> <ul><li>owner     验证节点owner地址</li></ul> <p>查询实例：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ qoscli query validator --owner address1gmllq4fgtlfe574dffaj90t3tkvy232phcukhq --indent
+<span class="token punctuation">{</span>                                                               
+  <span class="token string">&quot;name&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;imuge&quot;</span>,                                              
+  <span class="token string">&quot;owner&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;address1gmllq4fgtlfe574dffaj90t3tkvy232phcukhq&quot;</span>,    
+  <span class="token string">&quot;validatorPubkey&quot;</span><span class="token keyword">:</span> <span class="token punctuation">{</span>                                          
+    <span class="token string">&quot;type&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;tendermint/PubKeyEd25519&quot;</span>,                         
+    <span class="token string">&quot;value&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;Z4gGHPR6l0sFJiC3zn9tNH5jivwpfBSWp/yPzvTkmIE=&quot;</span>     
+  <span class="token punctuation">}</span>,                                                            
+  <span class="token string">&quot;bondTokens&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;100&quot;</span>,                                          
+  <span class="token string">&quot;description&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;&quot;</span>,                                            
+  <span class="token string">&quot;status&quot;</span><span class="token keyword">:</span> 0,                                                  
+  <span class="token string">&quot;inactiveCode&quot;</span><span class="token keyword">:</span> 0,                                            
+  <span class="token string">&quot;inactiveTime&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;0001-01-01T00:00:00Z&quot;</span>,                       
+  <span class="token string">&quot;inactiveHeight&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;0&quot;</span>,                                        
+  <span class="token string">&quot;bondHeight&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;1&quot;</span>                                             
+<span class="token punctuation">}</span>                                                               
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><blockquote><p>其中<code>status</code>表示当前validator状态，0 active，1 pending</p></blockquote> <h3 id="validators"><a href="#validators" aria-hidden="true" class="header-anchor">#</a> validators</h3> <p>validators列表，打印出当前网络中所有验证节点信息。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ qoscli query validators --help
+Query all validators info
+
+Usage:
+  qoscli query validators <span class="token punctuation">[</span>flags<span class="token punctuation">]</span>
+
+Flags:
+      --chain-id string   Chain ID of tendermint node
+      --height int        block height to query, omit to get <span class="token function">most</span> recent provable block
+  -h, --help              <span class="token function">help</span> <span class="token keyword">for</span> validators
+      --indent            add indent to json response
+      --node string       <span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> to tendermint rpc interface <span class="token keyword">for</span> this chain <span class="token punctuation">(</span>default <span class="token string">&quot;tcp://localhost:26657&quot;</span><span class="token punctuation">)</span>
+      --trust-node        Trust connected full node <span class="token punctuation">(</span>don't verify proofs <span class="token keyword">for</span> responses<span class="token punctuation">)</span>
+
+Global Flags:
+  -e, --encoding string   Binary encoding <span class="token punctuation">(</span>hex<span class="token operator">|</span>b64<span class="token operator">|</span>btc<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;hex&quot;</span><span class="token punctuation">)</span>
+      --home string       directory <span class="token keyword">for</span> config and data <span class="token punctuation">(</span>default <span class="token string">&quot;C:\\Users\\imuge/.qoscli&quot;</span><span class="token punctuation">)</span>
+  -o, --output string     Output <span class="token function">format</span> <span class="token punctuation">(</span>text<span class="token operator">|</span>json<span class="token punctuation">)</span> <span class="token punctuation">(</span>default <span class="token string">&quot;text&quot;</span><span class="token punctuation">)</span>
+      --trace             print out full stack trace on errors
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/24/2018, 6:08:48 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/qos/client/qcp.html" class="prev">
+          qcp
+        </a></span> <span class="next"><a href="/qos/spec/account.html">
+          Account
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/qos/assets/js/app.a7582c95.js" defer></script><script src="/qos/assets/js/10.5be524e7.js" defer></script>
+  </body>
+</html>
